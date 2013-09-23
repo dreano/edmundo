@@ -1,0 +1,243 @@
+\documentclass[notes]{beamer}
+\usepackage{graphicx}
+\usepackage{url}
+
+\mode<presentation>
+{
+  % A tip: pick a theme you like first, and THEN modify the color theme, and then add math content.
+  % Warsaw is the theme selected by default in Beamer's installation sample files.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% THEME
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%   \usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%   \usetheme{Copenhagen}
+%   \usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Dresden}
+   \usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% COLOR THEME
+  %\usecolortheme{albatross}
+  %\usecolortheme{beetle}
+  %\usecolortheme{crane}
+  %\usecolortheme{default}
+  %\usecolortheme{dolphin}
+  %\usecolortheme{dove}
+  %\usecolortheme{fly}
+  %\usecolortheme{lily}
+  \usecolortheme{orchid}
+  %\usecolortheme{rose}
+  %\usecolortheme{seagull}
+  %\usecolortheme{seahorse}
+  %\usecolortheme{sidebartab}
+  %\usecolortheme{structure}
+  %\usecolortheme{whale}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% OUTER THEME
+  %\useoutertheme{default}
+  %\useoutertheme{infolines}
+  %\useoutertheme{miniframes}
+  %\useoutertheme{shadow}
+  %\useoutertheme{sidebar}
+  %\useoutertheme{smoothbars}
+  %\useoutertheme{smoothtree}
+  %\useoutertheme{split}
+  %\useoutertheme{tree}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% INNER THEME
+  %\useinnertheme{circles}
+  %\useinnertheme{default}
+  %\useinnertheme{inmargin}
+  %\useinnertheme{rectangles}
+  %\useinnertheme{rounded}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \setbeamercovered{transparent} % or whatever (possibly just delete it)
+  % To change behavior of \uncover from graying out to totally invisible, can change \setbeamercovered to invisible instead of transparent. apparently there are also 'dynamic' modes that make the amount of graying depend on how long it'll take until the thing is uncovered.
+
+}
+
+
+% Get rid of nav bar
+\beamertemplatenavigationsymbolsempty
+
+% Use short top
+\usepackage[headheight=12pt,footheight=12pt]{beamerthemeboxes}
+%\addheadboxtemplate{\color{black}}{
+%\hskip0.3cm
+%\color{white}
+%\insertshortauthor \ \ \ \ 
+%\insertframenumber \ \ \ \ \ \ \ 
+%\insertsection \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \insertsubsection
+%\hskip0.3cm}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsection
+%}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsubsection
+%}
+
+% Insert frame number at bottom of the page.
+\usefoottemplate{\hfil\tiny{\color{black!90}\insertframenumber}} 
+\setbeamertemplate{footline}[frame number]
+\usepackage[english, portuguese]{babel}
+\usepackage[latin1, utf8]{inputenc}
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\title{Redes Sensores}
+\subtitle{}
+
+\author{Adriano Ricardo Ruggero}
+
+\institute{Instituto de Computação - Unicamp}
+
+\date{\today}
+
+\subject{Talks}
+
+\def\defn#1{{\color{red} #1}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Agenda}
+  \tableofcontents
+\end{frame}
+
+\section{Introdução}
+
+\section{Características}
+
+\section{Desempenho}
+
+\section{Arquitetura}
+
+\section{Modelos}
+
+\section{Protocolos}
+
+\section{Segurança}
+
+\section{Considerações finais}
+
+\begin{frame}
+
+\frametitle{Introdução}
+
+\textbf{Definições:} 
+
+\begin{itemize}
+
+
+\pause\uncover{\item Uma rede sem fio formada por um grande número de sensores pequenos e
+imóveis  que detectam e transmitem alguma característica física do ambiente. A informação contida nos sensores é agregada numa base central de dados;}
+
+\pause\uncover{\item Uma classe particular de sistemas distribuídos, onde as comunicações de baixo
+nível não dependem da localização topológica da rede;}
+
+\pause\uncover{\item Um conjunto de nós individuais (sensores) que operam sozinhos, mas que podem formar uma rede com o objetivo de juntar as informações individuais de cada sensor para monitorar algum fenômeno.}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Características}
+
+\begin{itemize}
+
+\pause\uncover{\item Sensor}
+
+\pause\uncover{\item Observador}
+
+\pause\uncover{\item Fenômeno}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Sensor}
+
+Dispositivo que monitora fisicamente um fenômeno ambiental e gera
+relatórios de medidas através de comunicação sem
+fio. A resposta produzida pode ser mensurada em relação às mudanças físicas observadas, como temperatura, umidade, quantidade de luz etc.
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Observador}
+
+Usuário final interessado em obter
+as informações enviadas pela rede de sensores relativas a um fenômeno. O usuário pode indicar interesses (ou consultas) para a rede e receber respostas a estas
+consultas. Podem existir, simultaneamente,
+múltiplos observadores numa rede de sensores.
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Fenômeno}
+
+Entidade de interesse do observador que é monitorada e cuja
+informação será analisada/filtrada pela rede de sensores. Múltiplos fenômenos
+podem ser observados concomitantemente numa rede.
+
+\end{frame}
+
+%%%%% Thanks page
+\begin{frame}
+\frametitle{Agradecimentos}
+\vskip20pt
+
+\begin{center}
+{\bf \color{alert} Obrigado pela atenção!}
+\end{center}
+
+\vskip20pt
+
+\begin{center}
+Apresentação disponível em:\\
+\url{http://www.math.university.edu/~speaker}
+\vskip12pt
+\end{center}
+
+\titlepage
+\end{frame}
+
+\end{document}
