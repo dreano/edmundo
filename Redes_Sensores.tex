@@ -1244,6 +1244,8 @@ Na fase inicial da configuração de uma rede de sensores pode haver um consumo 
 \end{frame}
 
 \begin{frame}
+
+
 \frametitle{Modelos}
 \framesubtitle{Modelos de envio de dados}
 
@@ -1255,6 +1257,7 @@ Na fase inicial da configuração de uma rede de sensores pode haver um consumo 
 \item \textbf{Modelo de Dados Orientado a Eventos} – os sensores apenas enviam dados para o observador se um determinado evento de interesse pré-determinado ocorrer. \pause
 \item \textbf{Modelo Iniciado pelo Observador} – o observador precisa fazer uma requisição explícita para que os sensores enviem dados. 
 
+\end{itemize}
 \end{block}
 
 \end{frame}
@@ -1302,7 +1305,7 @@ Após uma comunicação de infra-estrutura inicial para criar um caminho entre o
 
 \begin{frame}
 \frametitle{Modelos}
-\framesubtitle{Modelos de rede - Redes Dinamicas}
+\framesubtitle{Modelos de rede - Redes Dinâmicas}
 
 \begin{block}
 
@@ -1314,7 +1317,13 @@ Os sensores, o observador ou o fenômeno podem se mover.
 
 Durante o tempo de configuração inicial, o observador pode criar vários caminhos entre ele e o fenômeno e colocá-los em cache para escolher o melhor caminho para momentos diferentes.  
 
-\end{block} \pause
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de rede - Redes Dinâmicas}
 
 \begin{block}
 
@@ -1322,7 +1331,7 @@ Caso não haja um caminho válido no cache, duas estratégias podem ser usadas:
 
 \begin{itemize}
 
-\item \textbf{Reativa}, onde o observador procura recuperar o caminho apenas depois de observar um caminho com falha. 
+\item \textbf{Reativa}, onde o observador procura recuperar o caminho apenas depois de observar um caminho com falha. \pause
 
 \item \textbf{Pró-ativa}, onde um sensor que faz parte do caminho lógico entre o observador e o fenômeno pretende deixar esse caminho. Para fazê-lo é necessário procurar um sensor livre e disposto a substituí-lo. No caso de nenhum sensor livre ser encontrado, uma mensagem de invalidação de caminho é enviada para o observador. 
 
