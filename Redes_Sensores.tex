@@ -597,6 +597,244 @@ Medida da capacidade da rede em observar um certo objeto, movendo-se em um camin
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Arquitetura}
+
+\begin{block}
+
+\begin{itemize}
+
+\item Infra-estrutura \pause
+
+\item Protocolos \pause
+
+\item Aplicação \pause
+
+\item Qualidade do serviço (QoS)
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Infra-estrutura}
+
+\begin{block}
+
+A infra-estrutura é determinada pelas características dos sensores e a forma de utilizá-los.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Infra-estrutura - Características dos sensores}
+
+\begin{block}
+
+\begin{itemize}
+
+\item Tamanho de memória \pause
+\item Precisão na leitura \pause
+\item Alcance de transmissão \pause
+\item Vida útil da bateria 
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Infra-estrutura - Características dos sensores}
+
+\begin{block}
+
+A precisão de um sensor depende de sua localização geográfica, do tamanho de seu \textit{buffer} (memória) e do tempo de processamento dos pacotes. 
+
+\end{block} \pause
+
+\begin{alertblock}
+
+Múltiplos sensores podem gerar informações redundantes ou com um nível de precisão maior do que o necessário para a aplicação. 
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Infra-estrutura - Forma de utilização}
+
+\begin{block}
+
+\begin{itemize}
+
+\item Número de sensores \pause
+\item Localização dos sensores \pause
+\item Nível de mobilidade dos sensores
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Infra-estrutura - Forma de utilização}
+
+\begin{block}
+
+Aumentar o número de sensores pode gerar a falsa impressão maior precisão na coleta de dados, caminhos mais eficientes e maior disponibilidade de energia na rede. 
+\end{block} \pause
+
+\begin{alertblock}
+
+Se a capacidade do meio compartilhado é excedida (muitos sensores transmitindo ao mesmo tempo), ocorre congestionamento na rede e o desempenho como um todo cai.
+
+\end{alertblock} \pause
+
+\begin{alertblock}
+
+Aumentar o número de sensores não garante qualidade de serviço em redes de sensores sem fio.
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos}
+
+\begin{block}
+
+Responsável pela comunicação entre os sensores e entre sensores e observadores. A maioria das aplicações usa protocolos MAC (\textit{Medium Access Control}) em comunicação sem fio. 
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos}
+
+\begin{block}
+
+Os protocolos de roteamento \textit{ad hoc} podem ser
+usados para redes de sensores.
+
+\end{block} \pause
+
+\begin{alertblock}
+
+Contudo, estes protocolos apresentam desvantagens: 
+
+\begin{itemize}
+
+\item Sensores têm pouca carga de bateria e memória restrita \pause
+
+\item A tabela de roteamento cresce com o tamanho da rede \pause
+
+\item Redes de sensores redes são projetadas para comunicação fim a fim e estes protocolos não reagem adequadamente caso ocorra movimentação \pause
+
+\item Requisições de endereçamento podem não ser
+apropriadas para redes de sensores \pause
+
+\item Protocolos de roteamento para redes \textit{ad hoc} não suportam disseminação cooperativa (fusão ou agregação de dados). 
+
+\end{itemize}
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos}
+
+\begin{block}
+
+Uma antiga técnica de roteamento para redes de sensores é o \textit{flooding} (inundação), baseada em \textit{broadcast}. 
+
+\end{block} \pause
+
+\begin{block}
+
+Os sensores propagam sua informação para todos seus vizinhos, em \textit{broadcast}, e esses vizinhos fazem a mesma coisa com a informação até que esta atinja o sorvedouro.
+
+\end{block} \pause
+
+\begin{alertblock}
+
+Entretanto...: 
+
+\begin{itemize}
+
+\item Pode causar um alto \textit{overhead} \pause
+
+\item Pode ocorrer implosão (um nó recebe a mesma mensagem por dois - ou mais - vizinhos diferentes) \pause
+
+\item Pode ocorrer a superposição (dois sensores, que atuam em um mesmo campo de observação, acabam detectando uma mesma situação e gerando uma mesma mensagem, propagando-a, ambos, para um vizinho em comum)
+
+\end{itemize}
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos}
+
+\begin{block}
+
+A técnica conhecida como \textit{gossiping} (“fofoca”) é uma derivação do \textit{flooding}, em que, ao invés de fazer \textit{broadcast} da mensagem, o sensor a transmite para um sensor vizinho escolhido aleatoriamente, e assim por diante, até chegar no sorvedouro.
+
+\end{block} \pause
+
+\begin{alertblock}
+
+Essa técnica evita a implosão, mas se leva muito tempo para que a informação percorra a rede.  
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - \textit{Directed Diffusion}}
+
+\begin{block}
+
+Na difusão direcionada, o sensor que deve transmitir nomeia os dados usando atributos que descrevem a tarefa a ser desempenhada.
+
+\end{block} \pause
+
+\begin{block}
+
+
+
+A estação base (sorvedouro) propaga seus interesses, ou seja, quais atributos quer receber. 
+\end{block} \pause
+
+Os sensores vizinhos propagam essa informação que, ao passar pelos sensores, informam a distância percorrida, e, ao chegar em um sensor que contenha o atributo de interesse, este o envia através do caminho informado até a estação base.
+
+\end{block} \pause
+
+\begin{block}
+
+Não há identificação prévia dos sensores na rede. 
+
+\end{block} 
+
+\end{frame}
+
 \section{Modelos}
 
 \section{Protocolos}
