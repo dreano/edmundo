@@ -149,9 +149,7 @@
 \end{frame}
 
 \begin{frame}
-
 \frametitle{Introdução}
-
 \framesubtitle{Definições:} 
 
 \begin{block}
@@ -606,11 +604,13 @@ Medida da capacidade da rede em observar um certo objeto, movendo-se em um camin
 
 \item Infra-estrutura \pause
 
-\item Protocolos \pause
-
 \item Aplicação \pause
 
-\item Qualidade do serviço (QoS)
+\item Qualidade do serviço (QoS) \pause
+
+\item Camadas \pause
+
+\item Protocolos 
 
 \end{itemize}
 
@@ -705,6 +705,176 @@ Se a capacidade do meio compartilhado é excedida (muitos sensores transmitindo 
 Aumentar o número de sensores não garante qualidade de serviço em redes de sensores sem fio.
 
 \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Aplicação}
+
+\begin{block}
+
+Interface pela qual o observador faz consultas sobre o fenômeno.
+
+\end{block} \pause
+
+\begin{block}
+
+A aplicação transforma os dados enviados pelos sensores em informações para o observador.
+
+\end{block} \pause
+
+\begin{block}
+
+As consultas podem ser \textbf{estáticas} ou \textbf{dinâmicas}. 
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Qualidade do serviço - QoS}
+
+\begin{block}
+
+Uma rede de sensores sem fio deve ter uma infra-estrutura e protocolos capazes de garantir a qualidade do serviço:
+
+\begin{itemize}
+
+\item Precisão \pause
+\item Latência \pause
+\item Tolerância a falhas \pause
+\item Energia 
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Camadas}
+
+\begin{block}
+
+As camadas permitem o isolamento de tarefas.
+
+\end{block} \pause
+
+\begin{block}
+
+Pode-se  afirmar determinada aplicação de um sensor pode ser definida independentemente do meio de transmissão utilizado.
+
+\end{block} \pause
+
+\begin{block}
+
+Em uma rede de sensores, têm-se as camadas:
+
+\begin{itemize}
+
+\item Física \pause
+\item Enlace \pause
+\item Rede \pause
+\item Aplicação
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Camadas - Física}
+
+\begin{block}
+
+A tarefa da camada física é a transmissão de mensagens entre sensores.
+
+\end{block} \pause
+
+\begin{block}
+
+Responsável por selecionar as frequências que serão utilizadas, gerar a portadora, detectar, modular e codificar o sinal. 
+
+\end{block} \pause
+
+\begin{block}
+
+A comunicação através de sinais de RF (rádio frequência) é a mais comum. A principal vantagem é que, ao contrário do que ocorre nas comunicações ópticas ou por infravermelho, neste tipo de comunicação o transmissor e o receptor não precisam estar alinhados.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Camadas - Enlace}
+
+\begin{block}
+
+Como as redes de sensores sem fio não exigem a definição prévia de uma infra-estrutura, os sensores devem possuir algum mecanismo que permita a identificação dos demais sensores na rede. Esta tarefa é realizada pela camada de enlace.
+
+\end{block} \pause
+
+\begin{block}
+
+Além do controle de acesso ao meio (MAC), esta camada realiza as tarefas de controle de erros, detecção de quadros e multiplexação do fluxo de dados.
+
+\end{block} \pause
+
+\begin{block}
+
+Como os sensores têm liberdade para deslocarem-se na rede, o controle de acesso ao meio é responsável pelo estabelecimento da comunicação \textit{multihop}, como forma de organizar a rede e estabelecer rotas.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Camadas - Rede}
+
+\begin{block}
+
+A camada de rede é responsável pelo roteamento de dados entre os sensores. 
+
+\end{block} \pause
+
+\begin{alertblock}
+
+Os protocolos de roteamento utilizados devem suportar a comunicação multihop e buscar sempre o uso mais eficiente possível da energia do sensor.
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Camadas - Aplicaçao}
+
+\begin{block}
+
+As aplicações de uma rede de sensores sem fio variam para cada caso.
+
+\end{block} \pause
+
+\begin{block}
+
+Entre os protocolos atualmente definidos para a camada de aplicação, destacam-se:
+
+\begin{itemize}
+
+\item \textit{Sensor Management Protocol} (SMP) (gerenciamento e agrupamento dos sensores) \pause
+\item \textit{Task Assignment and Data Advertisement Protocol}   (TADAP) (interesses do observador) \pause
+\item \textit{Sensor Query and Data Dissemination Protocol} (SQDDP) (interface para consultas aos sensores)
+
+\end{itemize}
+
+\end{block}
 
 \end{frame}
 
@@ -808,6 +978,49 @@ Essa técnica evita a implosão, mas se leva muito tempo para que a informação
 
 \begin{frame}
 \frametitle{Arquitetura}
+\framesubtitle{Protocolos - Outros protocolos}
+
+\begin{block}
+
+Protocolos para redes planas:
+
+\begin{itemize}
+
+\item \textit{Directed Diffusion} \pause
+\item SPIN (\textit{Sensor Protocol for Information via Negotiation}) \pause
+\item SAR (\textit{Sequential Assignment Routing}) \pause
+\item \textit{Adaptive Local Routing Cooperative Signal Processing: Noncoherent Processing e Coherent Processing}
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - Outros protocolos}
+
+\begin{block}
+
+Protocolos para redes hierárquicas:
+
+\begin{itemize}
+
+\item LEACH (\textit{Low Energy Adaptive Clustering Hierarchy}) \pause
+\item CBRP (\textit{Cluster Based Routing Protocol}) \pause
+\item TEEN (\textit{Threshold-sensitive Energy Efficient Network}) \pause
+\item APTEEN (\textit{Adaptive Periodic Threshold-sensitive Energy Efficient Network}) \pause
+\item PEGASIS (\textit{Power Efficient Gathering in Sensor Information System})
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
 \framesubtitle{Protocolos - \textit{Directed Diffusion}}
 
 \begin{block}
@@ -818,12 +1031,12 @@ Na difusão direcionada, o sensor que deve transmitir nomeia os dados usando atr
 
 \begin{block}
 
-
-
 A estação base (sorvedouro) propaga seus interesses, ou seja, quais atributos quer receber. 
 \end{block} \pause
 
-Os sensores vizinhos propagam essa informação que, ao passar pelos sensores, informam a distância percorrida, e, ao chegar em um sensor que contenha o atributo de interesse, este o envia através do caminho informado até a estação base.
+\begin{block}
+
+Os sensores vizinhos propagam essa informação que, ao passar pelos sensores, informam a distância percorrida e, ao chegar em um sensor que contenha o atributo de interesse, este o envia através do caminho informado até a estação base.
 
 \end{block} \pause
 
@@ -835,9 +1048,289 @@ Não há identificação prévia dos sensores na rede.
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - SAR (\textit{Sequential Assignment Routing})}
+
+\begin{block}
+
+O SAR realiza roteamento \textit{multihop}, utilizando tabelas, pelas quais faz uma seleção de múltiplos caminhos, evitando \textit{overhead} em caso de falha.
+
+\end{block} \pause
+
+\begin{block}
+
+Cria diversas árvores, sendo que a raiz de cada uma delas é vizinha à estação base. 
+
+\end{block} \pause
+
+\begin{block}
+
+Baseia a escolha do caminho a ser utilizado de acordo com os recursos de energia disponíveis, QoS e a prioridade do pacote a ser enviado, através de uma métrica ponderada entre estes fatores.
+
+\end{block} \pause
+
+\begin{block}
+
+As árvores, que formam os múltiplos caminhos, evitam os nós problemáticos.
+
+\end{block} \pause
+
+\begin{block}
+
+Um sensor pode pertencer a várias árvores distintas e enviar suas mensagens por uma entre as várias árvores disponíveis.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - SPIN (\textit{Sensor Protocol for Information via Negotiation})}
+
+\begin{block}
+
+O SPIN é, na verdade, uma família de protocolos adaptativos para redes de sensores.
+
+\end{block} \pause
+
+\begin{block}
+
+Nos protocolos SPIN, os sensores utilizam descritores, chamados de \textbf{meta-dados}, para nomear seus dados.
+
+\end{block} \pause
+
+\begin{block}
+
+Ao invés de difundirem os dados pela rede, difundem os meta-dados, que são de tamanho menor, atendendo ao problema de escassez de energia, em comparação ao \textit{flooding}.
+
+\end{block} \pause
+
+\begin{block}
+
+Possuem gerenciamento de recursos, que permite tomar decisões de forma a não gastar uma quantidade de energia que possa levar ao desligamento do sensor.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - LEACH (\textit{Low Energy Adaptive Clustering Hierarchy})}
+
+\begin{block}
+
+Protocolo eficiente em energia para redes sem mobilidade.
+
+\end{block} \pause
+
+\begin{block}
+
+Utiliza uma arquitetura baseada em \textit{clusters}, onde os sensores que fazem parte de um \textit{cluster} enviam seus dados apenas para o sensor raiz desse \textit{cluters}, o \textit{cluster-head}. 
+
+\end{block} \pause
+
+\begin{block}
+
+No \textit{cluster-head} há a agregação dos dados de cada sensor, com o tratamento de informações redundantes e o envio desses dados para a estação base.
+
+\end{block} \pause
+
+\begin{block}
+
+Há uma rotação dos \textit{cluster-heads}, proporcionando um gasto de energia mais uniforme entre os nós e evitando que a perda de um \textit{cluster-head} leve à inutilização da rede.
+
+\end{block}
+
+\begin{block}
+
+A comunicação entre os nós e o \textit{cluster-head} é feita através de TDMA.
+
+\end{block}
+
+\end{frame}
+
 \section{Modelos}
 
-\section{Protocolos}
+\begin{frame}
+\frametitle{Modelos}
+
+\begin{block}
+
+ \center \textbf{Modelos}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de comunicação}
+
+\begin{block}
+
+O protocolo de uma rede de sensores sem fio deve permitir dois modelos de comunicação: \pause
+
+\begin{itemize}
+
+\item Aplicação \pause
+\item Infra-estrutura
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Comunicação de aplicação}
+
+\begin{block}
+
+Envio dos dados coletados pelos sensores para a aplicação.
+
+\end{block} \pause
+
+\begin{block}
+
+Os dados são tratados a fim de informar o observador sobre o fenômeno.
+
+\end{block} \pause
+
+\begin{block}
+
+Pode ocorrer de duas formas:
+
+\begin{itemize}
+
+\item Cooperativa: um nó transmite seus dados para um nó próximo e este manda para um outro próximo e assim por diante até chegar a aplicação. \pause
+\item Não-Cooperativa: os sensores atendem o observador sem se comunicarem entre si. 
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Comunicação de infra-estrutura}
+
+\begin{block}
+
+Necessária para configurar, manter e otimizar a rede.
+
+\end{block} \pause
+
+\begin{block}
+
+Os sensores têm que ser capazes de encontrar caminhos dinâmicos para outros sensores, para o observador e para o fenômeno.
+
+\end{block} \pause
+
+\begin{block}
+
+Pode gerar \textit{overhead}, portanto é importante minimizá-la, para evitar que o requisito de latêcia não seja atendido. 
+
+\end{block} \pause
+
+\begin{block}
+
+Na fase inicial da configuração de uma rede de sensores pode haver um consumo maior de energia, assim como quando os sensores são móveis. 
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de envio de dados}
+
+\begin{block}
+
+\begin{itemize}
+
+\item \textbf{Modelo Contínuo} – os sensores enviam os seus dados com uma taxa pré-especificada e fixa. \pause
+\item \textbf{Modelo de Dados Orientado a Eventos} – os sensores apenas enviam dados para o observador se um determinado evento de interesse pré-determinado ocorrer. \pause
+\item \textbf{Modelo Iniciado pelo Observador} – o observador precisa fazer uma requisição explícita para que os sensores enviem dados. 
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de rede}
+
+\begin{block}
+
+\begin{itemize}
+
+\item Redes Estáticas \pause
+\item Redes Dinâmicas
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de rede - Redes Estáticas}
+
+\begin{block}
+
+Os sensores, o observador e o fenômeno não se movem.
+
+\end{block} \pause
+
+\begin{block}
+
+Um nó eleito transmite um resumo das características locais para o observador podendo haver vários níveis hierárquicos. 
+
+\end{block} \pause
+
+\begin{block}
+
+Após uma comunicação de infra-estrutura inicial para criar um caminho entre o sensor e o observador, apenas corre comunicação de aplicação. 
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos}
+\framesubtitle{Modelos de rede - Redes Dinamicas}
+
+\begin{block}
+
+Os sensores, o observador ou o fenômeno podem se mover.
+
+\end{block} \pause
+
+\begin{block}
+
+Durante o tempo de configuração inicial, o observador pode criar vários caminhos entre ele e o fenômeno e colocá-los em cache para escolher o melhor caminho para momentos diferentes.  
+
+\end{block} \pause
+
+\begin{block}
+
+Caso não haja um caminho válido no cache, duas estratégias podem ser usadas:
+
+\begin{itemize}
+
+\item \textbf{Reativa}, onde o observador procura recuperar o caminho apenas depois de observar um caminho com falha. 
+
+\item \textbf{Pró-ativa}, onde um sensor que faz parte do caminho lógico entre o observador e o fenômeno pretende deixar esse caminho. Para fazê-lo é necessário procurar um sensor livre e disposto a substituí-lo. No caso de nenhum sensor livre ser encontrado, uma mensagem de invalidação de caminho é enviada para o observador. 
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
 
 \section{Segurança}
 
@@ -847,7 +1340,7 @@ Não há identificação prévia dos sensores na rede.
 \begin{frame}
 \frametitle{Referências}
 
-\bibliographystyle{ieee}
+\bibliographystyle{acm}
 \bibliography{ref}
 
 \end{frame}
@@ -864,8 +1357,8 @@ Não há identificação prévia dos sensores na rede.
 \vskip20pt
 
 \begin{center}
-Apresentação disponível em:\\
-\url{http:/}
+Apresentação disponível em nosso grupo de \textit{e-mails}:\\
+%\url{http:/}
 \vskip12pt
 \end{center}
 
