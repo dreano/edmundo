@@ -125,11 +125,20 @@
 
 \def\defn#1{{\color{red} #1}}
 
+\AtBeginSection[]{%
+  \begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+}
+
 \begin{document}
 
 \begin{frame}
 \label{slide_1}
   \titlepage
+
 \end{frame}
 
 \begin{frame}
@@ -156,7 +165,7 @@
 \frametitle{Introdução}
 \framesubtitle{Definições:} 
 
-\begin{block}
+\begin{block}{Definição}
 
 Uma rede sem fio formada por um grande número de sensores pequenos e imóveis  que detectam e transmitem alguma característica física do ambiente. A informação contida nos sensores é agregada numa base central de dados \cite{Malladi_1}
 
@@ -169,7 +178,7 @@ Uma rede sem fio formada por um grande número de sensores pequenos e imóveis  
 \frametitle{Introdução}
 \framesubtitle{Definições:} 
 
-\begin{block}
+\begin{block}{Definição}
 
 Uma classe particular de sistemas distribuídos, onde as comunicações de baixo
 nível não dependem da localização topológica da rede \cite{Huang_2}
@@ -182,7 +191,8 @@ nível não dependem da localização topológica da rede \cite{Huang_2}
 \label{slide_6}
 \frametitle{Introdução}
 \framesubtitle{Definições:} 
-\begin{block}
+
+\begin{block}{Definição}
 
 Um conjunto de nós individuais (sensores) que operam sozinhos, mas que podem formar uma rede com o objetivo de juntar as informações individuais de cada sensor para monitorar algum fenômeno.
 
@@ -195,7 +205,7 @@ Um conjunto de nós individuais (sensores) que operam sozinhos, mas que podem fo
 \frametitle{Introdução}
 \framesubtitle{Objetivos}
 
-\begin{block}
+\begin{block}{Objetivos}
 
 O objetivo principal é monitorar fenômenos em ambientes perigosos, de difícil acesso ou ambientes de interação direta com um indivíduo e transmiti-los em forma de dados. 
 \end{block} \pause
@@ -219,7 +229,7 @@ Apesar de menor e menos confiável do que equipamentos de rede tradicionais, jun
 \frametitle{Introdução}
 \framesubtitle{Vantagens}
 
-\begin{block}
+\begin{block}{Vantagens}
 
 \begin{itemize}
 
@@ -240,13 +250,20 @@ Apesar de menor e menos confiável do que equipamentos de rede tradicionais, jun
 \frametitle{Introdução}
 \framesubtitle{Usos}
 
-\begin{block}
+\begin{block}{Usos}
 
 A área de Redes de Sensores sem Fio têm mostrado um grande potencial em fazer parte da vida das pessoas no futuro, levando a uma “simbiose” cada vez maior entre a máquina e o homem\cite{Redes_Sensores}. 
 
-\end{block} \pause
+\end{block}
 
-\begin{block}
+\end{frame}
+
+\begin{frame}
+\label{slide_10}
+\frametitle{Introdução}
+\framesubtitle{Usos}
+
+\begin{block}{Usos}
 
 Observa-se isto pela gama de áreas em que redes de sensores podem ser utilizadas: \pause
 
@@ -268,7 +285,7 @@ Observa-se isto pela gama de áreas em que redes de sensores podem ser utilizada
 
 \section{Características}
 \begin{frame}
-\label{slide_10}
+\label{slide_11}
 \frametitle{Características}
 
 \begin{block}
@@ -280,11 +297,11 @@ Observa-se isto pela gama de áreas em que redes de sensores podem ser utilizada
 \end{frame}
 
 \begin{frame}
-\label{slide_11}
+\label{slide_12}
 \frametitle{Características}
-\framesubtitle{Sensor}
+\framesubtitle{Nó Sensor}
 
-\begin{block}
+\begin{block}{Nó Sensor}
 
 Dispositivo que monitora fisicamente um fenômeno ambiental e gera
 relatórios de medidas através de comunicação sem
@@ -299,13 +316,13 @@ A resposta produzida pode ser mensurada em relação às mudanças físicas obse
 \end{frame}
 
 \begin{frame}
-\label{slide_12}
+\label{slide_13}
 \frametitle{Características}
-\framesubtitle{Elementos de um sensor}
+\framesubtitle{Elementos de um nó sensor}
 
-\begin{block}
+\begin{block}{Elementos de um nó sensor}
 
-Elementos de um sensor típico: \pause
+Elementos de um nó sensor típico: \pause
 
 \begin{itemize}
 
@@ -324,11 +341,11 @@ Elementos de um sensor típico: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_13}
+\label{slide_14}
 \frametitle{Características}
 \framesubtitle{Observador}
 
-\begin{block}
+\begin{block}{Observador}
 
 Usuário final interessado em obter as informações enviadas pela rede de sensores relativas a um fenômeno. 
 \end{block}
@@ -346,11 +363,11 @@ Podem existir, simultaneamente, múltiplos observadores numa rede de sensores.
 \end{frame}
 
 \begin{frame}
-\label{slide_14}
+\label{slide_15}
 \frametitle{Características}
 \framesubtitle{Fenômeno}
 
-\begin{block}
+\begin{block}{Fenômeno}
 
 Entidade de interesse do observador que é monitorada e cuja
 informação será analisada/filtrada pela rede de sensores.
@@ -365,11 +382,11 @@ Múltiplos fenômenos podem ser observados concomitantemente numa rede.
 \end{frame}
 
 \begin{frame}
-\label{slide_15}
+\label{slide_16}
 \frametitle{Características}
 \framesubtitle{Endereçamento}
 
-\begin{block}
+\begin{block}{Endereçamento}
 
 Cada sensor de uma rede de sensores sem fio pode ser acessado individualmente ou não, dependendo da aplicação. 
 
@@ -385,11 +402,11 @@ Exemplo: sensores que monitoram funções do corpo humano.
 \end{frame}
 
 \begin{frame}
-\label{slide_16}
+\label{slide_17}
 \frametitle{Características}
 \framesubtitle{Agregação de dados}
 
-\begin{block}
+\begin{block}{Agregação de dados}
 
 Uma rede de sensores com função de agregação de dados pode agregar (ou sumarizar) os dados obtidos por diferentes nós antes do envio à estação base\footnote{Ponto de recepção das mensagens dos sensores da rede.}, reduzindo o tráfego de mensagens.
 
@@ -398,11 +415,11 @@ Uma rede de sensores com função de agregação de dados pode agregar (ou sumar
 \end{frame}
 
 \begin{frame}
-\label{slide_17}
+\label{slide_18}
 \frametitle{Características}
 \framesubtitle{Mobilidade}
 
-\begin{block}
+\begin{block}{Mobilidade}
 
 Em uma rede de sensores sem fio, os sensores devem ter a capacidade de se adaptarem para continuar de acordo com os interesses do observador caso haja mobilidade.
 \end{block} \pause
@@ -413,7 +430,7 @@ Exemplos: \pause
 
 \begin{itemize}
 \item Nós estáticos utilizados para monitoramento do ritmo cardíaco de um paciente \pause
-\item Nós móveis utilizados para monitorar condições dentro de um tornado
+\item Nós móveis utilizados para monitorar condições dentro de um tornado~\cite{Twister}
 \end{itemize}
 
 \end{exampleblock}
@@ -421,11 +438,11 @@ Exemplos: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_18}
+\label{slide_19}
 \frametitle{Características}
 \framesubtitle{Número de sensores}
 
-\begin{block}
+\begin{block}{Número de sensores}
 
 Característica que requer atenção especial, pois o número de sensores não deve interferir na eficiência da rede (escalabilidade).
 \end{block}
@@ -433,11 +450,11 @@ Característica que requer atenção especial, pois o número de sensores não d
 \end{frame}
 
 \begin{frame}
-\label{slide_19}
+\label{slide_20}
 \frametitle{Características}
 \framesubtitle{Limitação de consumo de energia}
 
-\begin{block}
+\begin{block}{Limitação de consumo de energia}
 
 Redes de sensores sem fio são extremamente sensíveis ao consumo de energia. 
 \end{block} \pause
@@ -462,11 +479,11 @@ A durabilidade de sua fonte de alimentação determina sua vida útil.
 \end{frame}
 
 \begin{frame}
-\label{slide_20}
+\label{slide_21}
 \frametitle{Características}
 \framesubtitle{Auto-organização}
 
-\begin{block}
+\begin{block}{Auto-organização}
 
 Sensores podem ficar inacessíveis por problemas físicos, como falta de energia, problemas no canal de comunicação sem fio ou ainda por decisão de algum algoritmo de gerenciamento da rede (economia de energia, já existe outro sensor na região que está coletando o dado desejado etc). 
 
@@ -475,9 +492,16 @@ Sensores podem ficar inacessíveis por problemas físicos, como falta de energia
 \begin{block}
 
 Pode ocorrer o contrário: sensores inativos passarem à atividade ou a inserção de novos sensores na rede. 
-\end{block} \pause
+\end{block} 
 
-\begin{block}
+\end{frame}
+
+\begin{frame}
+\label{slide_22}
+\frametitle{Características}
+\framesubtitle{Auto-organização}
+
+\begin{block}{Auto-organização}
 
 Em ambos os casos, é necessário que existam ferramentas para a auto-organização da rede, de modo que esta cumpra seus objetivos.
 
@@ -491,11 +515,11 @@ Essa configuração deve ser feita periodicamente e precisa ser automática, já
 \end{frame}
 
 \begin{frame}
-\label{slide_21}
+\label{slide_23}
 \frametitle{Características}
 \framesubtitle{Resposta a consultas}
 
-\begin{block}
+\begin{block}{Resposta a consultas}
 
 Uma consulta pode ser solicitada a um nó (sensor) individual ou a um grupo de nós.
 
@@ -516,11 +540,11 @@ Pode ser necessário definir muitos nós sorvedouros que coletarão os dados de 
 \section{Métricas de desempenho}
 
 \begin{frame}
-\label{slide_22}
+\label{slide_24}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Eficiência de energia e vida útil}
 
-\begin{block}
+\begin{block}{Eficiência de energia e vida útil}
 
 Devido aos sensores possuírem baterias como fonte de energia, é necessário que os protocolos sejam eficientes em relação ao uso de energia, fazendo com que a vida útil do sistema possa ser aumentada. 
 \end{block} \pause
@@ -534,7 +558,7 @@ Isso torna a conservação de energia um dos tópicos mais importantes a serem c
 \end{frame}
 
 \begin{frame}
-\label{slide_23}
+\label{slide_25}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Eficiência de energia e vida útil}
 
@@ -553,11 +577,11 @@ No processamento, sempre que possível, devem ser empregados métodos de economi
 \end{frame}
 
 \begin{frame}
-\label{slide_24}
+\label{slide_26}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Energias alternativas}
 
-\begin{block}
+\begin{block}{Energias alternativas}
 
 Pode-se aumentar o tempo de vida útil de um sensor aproveitando algum tipo de energia presente no ambiente, como eólica, solar etc. 
 
@@ -566,11 +590,11 @@ Pode-se aumentar o tempo de vida útil de um sensor aproveitando algum tipo de e
 \end{frame}
 
 \begin{frame}
-\label{slide_25}
+\label{slide_27}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Latência e precisão}
 
-\begin{block}
+\begin{block}{Latência e precisão}
 
 Dependendo do fenômeno em observação, pode ser necessário analisá-lo em um certo espaço de tempo (latência), obtendo informações precisas e confiáveis. 
 \end{block} \pause
@@ -589,11 +613,11 @@ A rede de sensores deve ser estruturada de maneira a obter a precisão e a latê
 \end{frame}
 
 \begin{frame}
-\label{slide_26}
+\label{slide_28}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Tolerância a falhas}
 
-\begin{block}
+\begin{block}{Tolerância a falhas}
 
 Sensores podem ficar inacessíveis por problemas físicos como a falta de energia, problemas no canal de comunicação sem fio ou por decisão de algum algoritmo de gerenciamento da rede.
 \end{block} \pause
@@ -613,21 +637,34 @@ Falhas não catastróficas devem ser transparentes para a aplicação.
 
 A falha deve ser tratada como um acontecimento normal, e não como exceção.
 
-\end{alertblock} \pause
-
-\begin{block}
-
-Pode-se alcançar a tolerância a falhas através da replicação de dados, porém esta operação requer energia. 
-\end{block} 
+\end{alertblock} 
 
 \end{frame}
 
 \begin{frame}
-\label{slide_27}
+\label{slide_29}
+\frametitle{Métricas de desempenho}
+\framesubtitle{Tolerância a falhas}
+
+\begin{block}{Tolerância a falhas}
+
+Pode-se alcançar a tolerância a falhas através da replicação de dados, porém esta operação requer energia. 
+\end{block}  \pause
+
+\begin{block}
+
+Deve-se conciliar a tolerância a falhas com o consumo racional de energia.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\label{slide_30}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Escalabilidade}
 
-\begin{block}
+\begin{block}{Escalabilidade}
 
 Redes de sensores sem fio podem possuir um grande número de nós, o que traz um desafio de escalabilidade. 
 \end{block} \pause
@@ -651,11 +688,11 @@ Escalabilidade exige protocolos de roteamento, endereçamento e agregação de d
 \end{frame}
 
 \begin{frame}
-\label{slide_28}
+\label{slide_31}
 \frametitle{Métricas de desempenho}
 \framesubtitle{Exposição dos sensores}
 
-\begin{block}
+\begin{block}{Exposição dos sensores}
 
 Medida da capacidade da rede em observar um certo objeto, movendo-se em um caminho arbitrário, em um determinado período de tempo.
  
@@ -665,7 +702,7 @@ Medida da capacidade da rede em observar um certo objeto, movendo-se em um camin
 
 \section{Arquitetura}
 \begin{frame}
-\label{slide_29}
+\label{slide_32}
 \frametitle{Arquitetura}
 
 \begin{block}
@@ -677,10 +714,10 @@ Medida da capacidade da rede em observar um certo objeto, movendo-se em um camin
 \end{frame}
 
 \begin{frame}
-\label{slide_30}
+\label{slide_33}
 \frametitle{Arquitetura}
 
-\begin{block}
+\begin{block}{Arquitetura}
 
 \begin{itemize}
 
@@ -701,11 +738,11 @@ Medida da capacidade da rede em observar um certo objeto, movendo-se em um camin
 \end{frame}
 
 \begin{frame}
-\label{slide_31}
+\label{slide_34}
 \frametitle{Arquitetura}
 \framesubtitle{Infra-estrutura}
 
-\begin{block}
+\begin{block}{Infra-estrutura}
 
 A infra-estrutura é determinada pelas características dos sensores e a forma de utilizá-los.
 
@@ -714,11 +751,11 @@ A infra-estrutura é determinada pelas características dos sensores e a forma d
 \end{frame}
 
 \begin{frame}
-\label{slide_32}
+\label{slide_35}
 \frametitle{Arquitetura}
 \framesubtitle{Infra-estrutura - Características dos sensores}
 
-\begin{block}
+\begin{block}{Características dos sensores}
 
 \begin{itemize}
 
@@ -734,11 +771,11 @@ A infra-estrutura é determinada pelas características dos sensores e a forma d
 \end{frame}
 
 \begin{frame}
-\label{slide_33}
+\label{slide_36}
 \frametitle{Arquitetura}
 \framesubtitle{Infra-estrutura - Características dos sensores}
 
-\begin{block}
+\begin{block}{Características dos sensores}
 
 A precisão de um sensor depende de sua localização geográfica, do tamanho de seu \textit{buffer} (memória) e do tempo de processamento dos pacotes. 
 
@@ -753,11 +790,11 @@ Múltiplos sensores podem gerar informações redundantes ou com um nível de pr
 \end{frame}
 
 \begin{frame}
-\label{slide_34}
+\label{slide_37}
 \frametitle{Arquitetura}
 \framesubtitle{Infra-estrutura - Forma de utilização}
 
-\begin{block}
+\begin{block}{Forma de utilização}
 
 \begin{itemize}
 
@@ -772,11 +809,11 @@ Múltiplos sensores podem gerar informações redundantes ou com um nível de pr
 \end{frame}
 
 \begin{frame}
-\label{slide_35}
+\label{slide_38}
 \frametitle{Arquitetura}
 \framesubtitle{Infra-estrutura - Forma de utilização}
 
-\begin{block}
+\begin{block}{Forma de utilização}
 
 Aumentar o número de sensores pode gerar a falsa impressão de maior precisão na coleta de dados, caminhos mais eficientes e maior disponibilidade de energia na rede. 
 \end{block} \pause
@@ -796,11 +833,11 @@ Aumentar o número de sensores não garante qualidade de serviço em redes de se
 \end{frame}
 
 \begin{frame}
-\label{slide_36}
+\label{slide_39}
 \frametitle{Arquitetura}
 \framesubtitle{Aplicação}
 
-\begin{block}
+\begin{block}{Aplicação}
 
 Interface pela qual o observador faz consultas sobre o fenômeno.
 
@@ -821,11 +858,11 @@ As consultas podem ser \textbf{estáticas} ou \textbf{dinâmicas}.
 \end{frame}
 
 \begin{frame}
-\label{slide_37}
+\label{slide_40}
 \frametitle{Arquitetura}
 \framesubtitle{Qualidade do serviço - QoS}
 
-\begin{block}
+\begin{block}{Qualidade do serviço - QoS}
 
 Uma rede de sensores sem fio deve ter uma infra-estrutura e protocolos capazes de garantir a qualidade do serviço: \pause
 
@@ -843,11 +880,11 @@ Uma rede de sensores sem fio deve ter uma infra-estrutura e protocolos capazes d
 \end{frame}
 
 \begin{frame}
-\label{slide_38}
+\label{slide_41}
 \frametitle{Arquitetura}
 \framesubtitle{Camadas}
 
-\begin{block}
+\begin{block}{Camadas}
 
 As camadas permitem o isolamento de tarefas.
 
@@ -877,11 +914,11 @@ Em uma rede de sensores, têm-se as camadas: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_39}
+\label{slide_42}
 \frametitle{Arquitetura}
 \framesubtitle{Camadas - Física}
 
-\begin{block}
+\begin{block}{Camada física}
 
 A tarefa da camada física é a transmissão de mensagens entre sensores.
 
@@ -907,11 +944,11 @@ A principal vantagem é que, ao contrário do que ocorre nas comunicações ópt
 \end{frame}
 
 \begin{frame}
-\label{slide_40}
+\label{slide_43}
 \frametitle{Arquitetura}
 \framesubtitle{Camadas - Enlace}
 
-\begin{block}
+\begin{block}{Camada de enlace}
 
 Como as redes de sensores sem fio não exigem a definição prévia de uma infra-estrutura, os sensores devem possuir algum mecanismo que permita a identificação dos demais sensores na rede. 
 \end{block} \pause
@@ -937,11 +974,11 @@ Como os sensores têm liberdade para deslocarem-se na rede, o controle de acesso
 \end{frame}
 
 \begin{frame}
-\label{slide_41}
+\label{slide_44}
 \frametitle{Arquitetura}
 \framesubtitle{Camadas - Rede}
 
-\begin{block}
+\begin{block}{Camada de rede}
 
 A camada de rede é responsável pelo roteamento de dados entre os sensores. 
 
@@ -956,11 +993,11 @@ Os protocolos de roteamento utilizados devem suportar a comunicação \textit{mu
 \end{frame}
 
 \begin{frame}
-\label{slide_42}
+\label{slide_45}
 \frametitle{Arquitetura}
-\framesubtitle{Camadas - Aplicaçao}
+\framesubtitle{Camadas - Aplicação}
 
-\begin{block}
+\begin{block}{Camada de aplicação}
 
 As aplicações de uma rede de sensores sem fio variam para cada caso.
 
@@ -983,11 +1020,11 @@ Entre os protocolos atualmente definidos para a camada de aplicação, destacam-
 \end{frame}
 
 \begin{frame}
-\label{slide_43}
+\label{slide_46}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos}
 
-\begin{block}
+\begin{block}{Protocolos}
 
 Responsável pela comunicação entre os sensores e entre sensores e observadores. 
 \end{block} \pause
@@ -1001,11 +1038,11 @@ A maioria das aplicações usa protocolos MAC (\textit{Medium Access Control}) e
 \end{frame}
 
 \begin{frame}
-\label{slide_44}
+\label{slide_47}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos}
 
-\begin{block}
+\begin{block}{Protocolos}
 
 Os protocolos de roteamento \textit{ad hoc} podem ser
 usados para redes de sensores.
@@ -1036,11 +1073,11 @@ apropriadas para redes de sensores \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_45}
+\label{slide_48}
 \frametitle{Arquitetura}
-\framesubtitle{Protocolos}
+\framesubtitle{\textit{Flooding}}
 
-\begin{block}
+\begin{block}{\textit{Flooding}}
 
 Uma antiga técnica de roteamento para redes de sensores é o \textit{flooding} (inundação), baseada em \textit{broadcast}. 
 
@@ -1071,11 +1108,11 @@ Entretanto...: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_46}
+\label{slide_49}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos}
 
-\begin{block}
+\begin{block}{\textit{Gossiping}}
 
 A técnica conhecida como \textit{gossiping} (“fofoca”) é uma derivação do \textit{flooding}, em que, ao invés de fazer \textit{broadcast} da mensagem, o sensor a transmite para um sensor vizinho escolhido aleatoriamente, e assim por diante, até chegar no sorvedouro.
 
@@ -1090,11 +1127,11 @@ Essa técnica evita a implosão, mas leva-se muito tempo para que a informação
 \end{frame}
 
 \begin{frame}
-\label{slide_47}
+\label{slide_50}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - Outros protocolos}
 
-\begin{block}
+\begin{block}{Outros protocolos}
 
 Protocolos para redes planas: \pause
 
@@ -1112,11 +1149,11 @@ Protocolos para redes planas: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_48}
+\label{slide_51}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - Outros protocolos}
 
-\begin{block}
+\begin{block}{Outros protocolos}
 
 Protocolos para redes hierárquicas: \pause
 
@@ -1135,11 +1172,11 @@ Protocolos para redes hierárquicas: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_49}
+\label{slide_52}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - \textit{Directed Diffusion}}
 
-\begin{block}
+\begin{block}{\textit{Directed Diffusion}}
 
 Na difusão direcionada, o sensor que deve transmitir nomeia os dados usando atributos que descrevem a tarefa a ser desempenhada.
 
@@ -1165,11 +1202,11 @@ Não há identificação prévia dos sensores na rede.
 \end{frame}
 
 \begin{frame}
-\label{slide_50}
+\label{slide_53}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - SAR (\textit{Sequential Assignment Routing})}
 
-\begin{block}
+\begin{block}{SAR (\textit{Sequential Assignment Routing})}
 
 O SAR realiza roteamento \textit{multihop}, utilizando tabelas, pelas quais faz uma seleção de múltiplos caminhos, evitando \textit{overhead} em caso de falha.
 
@@ -1185,9 +1222,16 @@ Cria diversas árvores, sendo que a raiz de cada uma delas é vizinha à estaç�
 
 Baseia a escolha do caminho a ser utilizado de acordo com os recursos de energia disponíveis, QoS e a prioridade do pacote a ser enviado, através de uma métrica ponderada entre estes fatores.
 
-\end{block} \pause
+\end{block}
 
-\begin{block}
+\end{frame}
+
+\begin{frame}
+\label{slide_54}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - SAR (\textit{Sequential Assignment Routing})}
+
+\begin{block}{SAR (\textit{Sequential Assignment Routing})}
 
 As árvores, que formam os múltiplos caminhos, evitam os nós problemáticos.
 
@@ -1202,11 +1246,11 @@ Um sensor pode pertencer a várias árvores distintas e enviar suas mensagens po
 \end{frame}
 
 \begin{frame}
-\label{slide_51}
+\label{slide_55}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - SPIN (\textit{Sensor Protocol for Information via Negotiation})}
 
-\begin{block}
+\begin{block}{SPIN (\textit{Sensor Protocol for Information via Negotiation})}
 
 O SPIN é, na verdade, uma família de protocolos adaptativos para redes de sensores.
 
@@ -1233,11 +1277,11 @@ Possuem gerenciamento de recursos, que permite tomar decisões de forma a não g
 \end{frame}
 
 \begin{frame}
-\label{slide_52}
+\label{slide_56}
 \frametitle{Arquitetura}
 \framesubtitle{Protocolos - LEACH (\textit{Low Energy Adaptive Clustering Hierarchy})}
 
-\begin{block}
+\begin{block}{LEACH (\textit{Low Energy Adaptive Clustering Hierarchy})}
 
 Protocolo eficiente em energia para redes sem mobilidade.
 
@@ -1253,9 +1297,16 @@ Utiliza uma arquitetura baseada em \textit{clusters}, onde os sensores que fazem
 
 No \textit{cluster-head} há a agregação dos dados de cada sensor, com o tratamento de informações redundantes e o envio desses dados para a estação base.
 
-\end{block} \pause
+\end{block} 
 
-\begin{block}
+\end{frame}
+
+\begin{frame}
+\label{slide_57}
+\frametitle{Arquitetura}
+\framesubtitle{Protocolos - LEACH (\textit{Low Energy Adaptive Clustering Hierarchy})}
+
+\begin{block}{LEACH (\textit{Low Energy Adaptive Clustering Hierarchy})}
 
 Há uma rotação dos \textit{cluster-heads}, proporcionando um gasto de energia mais uniforme entre os nós e evitando que a perda de um \textit{cluster-head} leve à inutilização da rede.
 
@@ -1272,7 +1323,7 @@ A comunicação entre os nós e o \textit{cluster-head} é feita através de TDM
 \section{Modelos}
 
 \begin{frame}
-\label{slide_53}
+\label{slide_58}
 \frametitle{Modelos}
 
 \begin{block}
@@ -1284,11 +1335,11 @@ A comunicação entre os nós e o \textit{cluster-head} é feita através de TDM
 \end{frame}
 
 \begin{frame}
-\label{slide_54}
+\label{slide_59}
 \frametitle{Modelos}
 \framesubtitle{Modelos de comunicação}
 
-\begin{block}
+\begin{block}{Modelos de comunicação}
 
 O protocolo de uma rede de sensores sem fio deve permitir dois modelos de comunicação: \pause
 
@@ -1304,11 +1355,11 @@ O protocolo de uma rede de sensores sem fio deve permitir dois modelos de comuni
 \end{frame}
 
 \begin{frame}
-\label{slide_55}
+\label{slide_60}
 \frametitle{Modelos}
 \framesubtitle{Comunicação de aplicação}
 
-\begin{block}
+\begin{block}{Comunicação de aplicação}
 
 Envio dos dados coletados pelos sensores para a aplicação.
 
@@ -1326,8 +1377,8 @@ Pode ocorrer de duas formas: \pause
 
 \begin{itemize}
 
-\item Cooperativa: um nó transmite seus dados para um nó próximo e este manda para um outro próximo e assim por diante até chegar a aplicação. \pause
-\item Não-Cooperativa: os sensores atendem o observador sem se comunicarem entre si. 
+\item \textbf{Cooperativa:} um nó transmite seus dados para um nó próximo e este manda para um outro próximo e assim por diante até chegar a aplicação. \pause
+\item \textbf{Não-Cooperativa:} os sensores atendem o observador sem se comunicarem entre si. 
 
 \end{itemize}
 
@@ -1336,11 +1387,11 @@ Pode ocorrer de duas formas: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_56}
+\label{slide_61}
 \frametitle{Modelos}
 \framesubtitle{Comunicação de infra-estrutura}
 
-\begin{block}
+\begin{block}{Comunicação de infra-estrutura}
 
 Necessária para configurar, manter e otimizar a rede.
 
@@ -1367,11 +1418,11 @@ Na fase inicial da configuração de uma rede de sensores pode haver um consumo 
 \end{frame}
 
 \begin{frame}
-\label{slide_57}
+\label{slide_62}
 \frametitle{Modelos}
 \framesubtitle{Modelos de envio de dados}
 
-\begin{block}
+\begin{block}{Modelos de envio de dados}
 
 \begin{itemize}
 
@@ -1385,11 +1436,11 @@ Na fase inicial da configuração de uma rede de sensores pode haver um consumo 
 \end{frame}
 
 \begin{frame}
-\label{slide_58}
+\label{slide_63}
 \frametitle{Modelos}
 \framesubtitle{Modelos de rede}
 
-\begin{block}
+\begin{block}{Modelos de rede}
 
 \begin{itemize}
 
@@ -1403,11 +1454,11 @@ Na fase inicial da configuração de uma rede de sensores pode haver um consumo 
 \end{frame}
 
 \begin{frame}
-\label{slide_59}
+\label{slide_64}
 \frametitle{Modelos}
 \framesubtitle{Modelos de rede - Redes Estáticas}
 
-\begin{block}
+\begin{block}{Redes Estáticas}
 
 Os sensores, o observador e o fenômeno não se movem.
 
@@ -1428,11 +1479,11 @@ Após uma comunicação de infra-estrutura inicial para criar um caminho entre o
 \end{frame}
 
 \begin{frame}
-\label{slide_60}
+\label{slide_65}
 \frametitle{Modelos}
 \framesubtitle{Modelos de rede - Redes Dinâmicas}
 
-\begin{block}
+\begin{block}{Redes Dinâmicas}
 
 Os sensores, o observador ou o fenômeno podem se mover.
 
@@ -1447,11 +1498,11 @@ Durante o tempo de configuração inicial, o observador pode criar vários camin
 \end{frame}
 
 \begin{frame}
-\label{slide_61}
+\label{slide_66}
 \frametitle{Modelos}
 \framesubtitle{Modelos de rede - Redes Dinâmicas}
 
-\begin{block}
+\begin{block}{Redes Dinâmicas}
 
 Caso não haja um caminho válido no cache, duas estratégias podem ser usadas: \pause
 
@@ -1470,7 +1521,7 @@ Caso não haja um caminho válido no cache, duas estratégias podem ser usadas: 
 \section{Segurança}
 
 \begin{frame}
-\label{slide_62}
+\label{slide_67}
 \frametitle{Segurança}
 
 \begin{block}
@@ -1482,11 +1533,11 @@ Caso não haja um caminho válido no cache, duas estratégias podem ser usadas: 
 \end{frame}
 
 \begin{frame}
-\label{slide_63}
+\label{slide_68}
 \frametitle{Segurança}
 \framesubtitle{Requisitos}
 
-\begin{block}
+\begin{block}{Requisitos}
 
 Requisitos básicos de segurança: \pause
 
@@ -1502,30 +1553,30 @@ Requisitos básicos de segurança: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_64}
+\label{slide_69}
 \frametitle{Segurança}
 \framesubtitle{Requisitos básicos}
 
-\begin{block}
+\begin{block}{Confiabilidade}
 
-\textbf{Confiabilidade:} capacidade de um sistema de responder a uma determinada especificação seguindo condições previamente definidas em um dado período de tempo.
+Capacidade de um sistema de responder a uma determinada especificação seguindo condições previamente definidas em um dado período de tempo.
 
 \end{block} \pause
 
-\begin{block}
+\begin{block}{Disponibilidade}
 
-\textbf{Disponibilidade:} probabilidade do sistema estar funcionando em um determinado instante.
+Probabilidade do sistema estar funcionando em um determinado instante.
 
 \end{block}
 
 \end{frame}
 
 \begin{frame}
-\label{slide_65}
+\label{slide_70}
 \frametitle{Segurança}
 \framesubtitle{Requisitos específicos}
 
-\begin{block}
+\begin{block}{Requisitos específicos}
 
 Requisitos específicos para uma rede de sensores sem fio: \pause
 
@@ -1543,11 +1594,11 @@ Requisitos específicos para uma rede de sensores sem fio: \pause
 \end{frame}
 
 \begin{frame}
-\label{slide_66}
+\label{slide_71}
 \frametitle{Segurança}
 \framesubtitle{Requisitos específicos - Confidencialidade dos dados}
 
-\begin{block}
+\begin{block}{Confidencialidade dos dados}
 
 Garante que as informações em uma rede de sensores não sejam acessadas por pessoas ou programas não autorizados. 
 \end{block} \pause
@@ -1561,11 +1612,11 @@ O método padrão para manter os dados secretos é a criptografia dos dados com 
 \end{frame}
 
 \begin{frame}
-\label{slide_67}
+\label{slide_72}
 \frametitle{Segurança}
 \framesubtitle{Requisitos específicos - Autenticação dos dados}
 
-\begin{block}
+\begin{block}{Autenticação dos dados}
 
 O receptor deve estar seguro que os dados são oriundos da fonte correta, ou seja, deve-se identificar a autoria de uma determinada ação ou transmissão. 
 
@@ -1580,11 +1631,11 @@ A autenticação pode ser garantida por meio de um mecanismo simétrico, de modo
 \end{frame}
 
 \begin{frame}
-\label{slide_68}
+\label{slide_73}
 \frametitle{Segurança}
 \framesubtitle{Requisitos específicos - Integridade dos dados}
 
-\begin{block}
+\begin{block}{Integridade dos dados}
 
 Garante ao receptor que não houve alterações (intencionais ou não) nos dados recebidos durante o seu trânsito. 
 
@@ -1593,11 +1644,11 @@ Garante ao receptor que não houve alterações (intencionais ou não) nos dados
 \end{frame}
 
 \begin{frame}
-\label{slide_69}
+\label{slide_74}
 \frametitle{Segurança}
 \framesubtitle{Requisitos específicos - Atualidade dos dados}
 
-\begin{block}
+\begin{block}{Atualidade dos dados}
 
 Certifica que não houve interferência de mensagens antigas.
 
@@ -1613,7 +1664,7 @@ Pode ser garantido se for feita a ordenação parcial das mensagens, sem causar 
 
 \section{Considerações finais}
 \begin{frame}
-\label{slide_70}
+\label{slide_75}
 \frametitle{Considerações finais}
 
 \begin{block}
@@ -1625,10 +1676,10 @@ Pode ser garantido se for feita a ordenação parcial das mensagens, sem causar 
 \end{frame}
 
 \begin{frame}
-\label{slide_71}
+\label{slide_76}
 \frametitle{Considerações finais}
 
-\begin{block}
+\begin{block}{Considerações finais}
 
 Apesar de apresentarem características comuns às redes móveis \textit{ad hoc}, as redes de sensores sem fio não podem ser abordadas e tratadas como tais, pois neste tipo de rede os nós têm baixa capacidade de energia e disponibilidade de memória.
 \end{block} \pause
@@ -1642,11 +1693,11 @@ Desta forma, os protocolos de roteamento utilizados para redes \textit{ad hoc} n
 \end{frame}
 
 \begin{frame}
-\label{slide_72}
+\label{slide_77}
 \frametitle{Considerações finais}
 \framesubtitle{Conceitos e desafios}
 
-\begin{block}
+\begin{block}{Conceitos e desafios}
 
 As redes de sensores sem fio trazem novos conceitos e alguns desafios: \pause
 
@@ -1675,19 +1726,62 @@ As redes de sensores sem fio trazem novos conceitos e alguns desafios: \pause
 
 \end{frame}
 
+\section{Questão}
+\begin{frame}
+\label{slide_078}
+\frametitle{Questão}
+
+\begin{block}
+
+ \center \textbf{Questão}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\label{slide_079}
+\frametitle{Questão}
+
+\begin{block}{Questão}
+
+O armazenamento da chave simétrica de criptografia em todos os dispositivos de uma rede de sensores sem fio insere uma fraqueza na segurança, pois um intruso poderia obtê-la a partir de qualquer nó ao qual tenha acesso e, assim, controlar toda a rede.
+
+\end{block} \pause
+
+\begin{block}
+
+Que mecanismos podem ser implementados para reduzir ou evitar o comprometimento da rede em situações como esta~\cite{Clicia}?
+
+\end{block}
+
+\end{frame}
+
 \section{Referências}
 \begin{frame}
-\label{slide_73}
+\label{slide_080}
 \frametitle{Referências}
 
-\bibliographystyle{acm}
+\begin{block}
+
+ \center \textbf{Referências}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\label{slide_81}
+\frametitle{Referências}
+
+\bibliographystyle{unsrt}
 \bibliography{ref}
 
 \end{frame}
 
 %%%%% Thanks page
 \begin{frame}
-\label{slide_74}
+\label{slide_82}
 \frametitle{Agradecimentos}
 \vskip20pt
 
