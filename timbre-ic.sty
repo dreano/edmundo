@@ -1,0 +1,34 @@
+\ProvidesPackage{timbre-ic}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphics}
+
+\voffset -0.54cm
+\hoffset -0.54cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\marginparwidth 0cm
+ 
+\topmargin 0cm
+\headheight 2.2cm
+\headsep 0.5cm
+\textheight 23cm
+\footskip 0.0cm
+
+\textwidth 17.5cm
+
+\input{abaco.tex}
+
+
+\newcommand\timbreic{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\lhead{\resizebox{!}{2cm}{\includegraphics{unicamp}}}
+	\chead{\centerline{\Large\sc Universidade Estadual de Campinas}
+               \centerline{\large\sc Instituto de Computação}}
+	\rhead{\ABACO{1}{9}{6}{9}{.7}}
+        
+       }
+
+\AtBeginDocument{\timbreic}

@@ -1,0 +1,65 @@
+\documentclass[12pt,twoside,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{timbre-ic}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pifont}
+
+
+\begin{document}
+
+\vskip 15mm
+
+\begin{center} 
+\textbf{Exercício 01 - Recuperação de mensagens - Tópicos em Redes de Computadores 01}
+
+\end{center}
+
+\vskip 5mm
+
+\textbf{Aluno:} Adriano Ricardo Ruggero
+
+\textbf{RA:} 144659
+
+\textbf{Professor:} Edmundo R. M. Madeira
+
+\vskip 20mm
+
+\begin{abstract}
+Para este cenário (\textit{e-mail} com confidencialidade, autenticação e integridade da mensagem), mostrar os passos do \textbf{receptor} para obter a mensagem $m$
+
+\end{abstract}
+
+% resetando configs de layout
+\newpage
+\pagestyle{plain}
+\headheight 0.0cm
+\headsep 0.0cm
+\footskip 2.2cm
+
+\section{Exercício 01}
+\label{sec:01}
+
+\textbf{Resposta:} para que o receptor \textbf{B} possa obter a mensagem $m$ enviada por \textbf{A} (emissor) neste cenário proposto, é necessário que ele siga os passos abaixo descritos:
+
+\begin{itemize}
+
+    \item \textbf{B} recebe uma mensagem de \textbf{A}. Esta mensagem é formada pela concatenação de um ''pacote'' (encriptado com uma chave simétrica,  contendo a mensagem $m$ concatenada com o \textit{hash} da mensagem $m$, \textit{hash} este que é assinado digitalmente com a chave privada de \textbf{A}) e a chave simétrica utilizada para a encriptação do pacote, encriptada com a chave pública de \textbf{B};
+    \item \textbf{B} utiliza sua chave privada para extrair a chave de sessão utilizada por \textbf{A} para a encriptação do ''pacote'' com chaves simétricas. A chave de sessão fora previamente encriptada pelo emissor utilizando a chave pública de \textbf{B}, o que, em teoria, permite que apenas \textbf{B} (detentor da chave privada correspondente) possa decriptá-la;
+    \item De posse da chave de sessão utilizada por \textbf{A}, \textbf{B} pode decriptar o "pacote" enviado por \textbf{A};
+    \item Com o "pacote'' decriptado, \textbf{B} pode agora verificar a assinatura digital de \textit{A}, utilizando a chave pública de \textbf{A};
+    \item \textbf{B} utiliza a mesma função de \textit{hash} utilizada por \textbf{A} na mensagem $m$ decriptada por ele, e compara o resultado com o \textit{hash} recebido concatenado com a mensagem. Caso sejam ''iguais'', \textbf{B} saberá que não houve alteração em $m$.
+
+\end{itemize}
+
+Desta forma, a assinatura do \textit{hash} da mensagem $m$ garante autenticaçao do remetente, a verificação do \textit{hash} garante integridade da mensagem e a encriptação com a chave de sessão garante confidencialidade. Como a troca da chave de sessão entre o remetente e o receptor não pode ocorrer em um canal seguro, é utilizado o sistema de chaves públicas para encriptação da chave de sessão\nocite{Kurose}.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}
