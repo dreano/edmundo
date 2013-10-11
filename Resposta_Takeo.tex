@@ -72,6 +72,9 @@ Há, também, a necessidade de se verificar a duplicidade de endereço quando um
 
 O modo baseado em infraestrutura também pode ser utilizado para atribuir endereços. Neste proposta, é utilizado um servidor DHCP centralizado (que evita problemas como duplicidade de endereços). O ponto negativo desta abordagem é a necessidade de elementos fixos na rede e a utilização de um gerenciador de endereços (governo, concessionárias...).
 
+O GeoSAC (\textit{Geographically Scoped Stateless Address Configuration}) adapta mecanismos inerentes ao protocolo IPv6 para utilização com endereçamento geográfico. Uma camada abaixo da camada de rede é responsável pelo roteamento geográfico, apresentando ao IPv6 uma topologia planificada. Desta forma, o enlace visto pelo IPv6 consistem em nós não diretamente conectados, mas que estão em uma área geográfica relacionada a um ponto de acesso. Este mecanismo pode ser útil para contornar problemas de controle de endereçamento dos nós fora do alcance dos pontos de acesso.
+
+No GeoSAC, o ponto de acesso envia um RA (\textit{Router Advertisement}) para todos os nós de uma determinada área. Em função do mecanismo de encaminhamento geográfico, esta mensagem também alcançará os nós localizados a mais de um salto de distância, mas dentro da área geográfica delimitada.
 
 \bibliographystyle{unsrt}
 \bibliography{refs}
