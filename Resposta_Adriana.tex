@@ -32,7 +32,7 @@
 
 \begin{abstract}
 
-Superadas as barreiras da Padronização e da Regulamentação, para implementar uma rede LTE em áreas rurais utilizando a frequência de 450MHz, é preciso ainda considerar alguns desafios. Quais são eles? Escolha um deles e explique-o em poucas linhas.
+Superadas as barreiras da Padronização e da Regulamentação, para implementar uma rede LTE em áreas rurais utilizando a frequência de 450MHz é preciso ainda considerar alguns desafios. Quais são eles? Escolha um deles e explique-o em poucas linhas.
 
 \end{abstract}
 
@@ -46,6 +46,11 @@ Superadas as barreiras da Padronização e da Regulamentação, para implementar
 \section{Resposta Seminário}
 \label{sec:01}
 
+Um dos desafios a ser considerado quando da implantação de uma rede LTE em zonas rurais é o \textit{backhaul}. Em uma explicação bem rápida, pode-se definir \textit{backhaul} como a porção de uma rede hierárquica de telecomunicações responsável por fazer a ligação entre o núcleo da rede, ou \textit{backbone}, e as subredes periféricas\cite{Backhaul}.
+
+A latência em um circuito de telecomunicações é um fator importante, e pode afetar sensivelmente a experiência do usuário quando da utilização de serviços de banda larga. A latência fim a fim de um circuito é afetada por muitos componentes, como a tecnologia de acesso de rádio. No LTE, isto inclui a rede de acesso (E-UTRAN - \textit{Evolved Universal Mobile Telecommunications System Terrestrial Radio Access Network\cite{EUTRAN}}) e o núcleo da rede (EPC - Entidades do Plano de Controle). Também há que considerar as latências em decorrência do \textit{backhaul} de agregação e da rede de transporte, que conecta os nós da EPC aos nós da E-UTRAN, além das latências entre a EPC e a rede de serviços e a internet.
+
+De maneira a minimizar estes tipos de latência em tais circuitos, torna-se mandatório reduzir as distâncias físicas e o número de nós  intermediários que conectam as E-UTRAN e a EPC\cite{LTE_Rural}.
 
 \bibliographystyle{unsrt}
 \bibliography{refs_dri}
