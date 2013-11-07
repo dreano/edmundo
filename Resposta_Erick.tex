@@ -1,0 +1,61 @@
+\documentclass[12pt,twoside,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{timbre-ic}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pifont}
+
+
+\begin{document}
+
+\vskip 15mm
+
+\begin{center} 
+\textbf{Seminário  - Escalonamento em Nuvens Híbridas - Tópicos em Redes de Computadores I}
+
+\end{center}
+
+\vskip 5mm
+
+\textbf{Aluno:} Adriano Ricardo Ruggero
+
+\textbf{RA:} 144659
+
+\textbf{Professor:} Edmundo R. M. Madeira
+
+\vskip 20mm
+
+\begin{abstract}
+
+Todas as informações e estimativas fornecidas como entrada
+para o escalonamento são consideradas corretas. Definir tais
+informações pode não ser uma tarefa fácil.
+Qual o impacto no escalonamento caso essas informações
+sejam imprecisas? De forma resumida, cite uma estratégia para
+tratar tal problema.
+
+
+\end{abstract}
+
+% resetando configs de layout
+\newpage
+\pagestyle{plain}
+\headheight 0.0cm
+\headsep 0.0cm
+\footskip 2.2cm
+
+\section{Resposta Seminário}
+\label{sec:01}
+
+Informações e estimativas fornecidas sem a precisão necessária podem levar a perdas na qualidade da informação e gerar incertezas no processo de escalonamento e execução das tarefas. 
+Uma estratégia para evitar tal problema pode ser considerar como entrada distribuições estatísticas de tempos e requisitos das aplicações e desempenho dos recursos, e não apenas valores absolutos. Tal critério evitaria abordagens reativas, como realizadas em escalonamento dinâmicos, diminuindo a complexidade do monitoramento do sistema e anulando o impacto de erros nos valores de entrada\cite{Escalonamento}.
+
+\bibliographystyle{unsrt}
+\bibliography{refs_erick}
+
+\end{document}
