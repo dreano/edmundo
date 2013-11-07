@@ -64,6 +64,10 @@ protocolo ARP:
 \section{Resposta Seminário}
 \label{sec:01}
 
+Em se tratando da topologia \textit{Portland}, a interpretação e resposta a solicitações ARP são delegadas ao chamado ''\textit{fabric manager}''. Segundo os autores, um \textit{switch} de borda intercepta as requisições ARP provenientes dos \textit{hosts} e as encaminha para o ''\textit{fabric manager}''. Este, por sua vez, consulta uma tabela (PMAC - \textit{Pseudo MAC}) que contém pseudo endereços para cada \textit{host} da topologia, além de sua localização na mesma.
+Caso o endereço seja localizado na tabela, é retornado o PMAC para o \textit{switch} de borda que originou a solicitação. Este \textit{switch}, por sua vez, cria um \textit{ARP reply} (camada 2) e o retorna ao \textit{host} solicitante.
+Se, por qualquer motivo,  o ''\textit{fabric manager}'' não tiver o endereço PMAC correspondente ao solicitado, ele mesmo fará um \textit{broadcast} para todos os \textit{hosts} para obter o mapeamento da topologia (e, assim, gerar o(s) PMAC(s) faltante(s)).
+Esta abordagem diminui sensivelmente o tráfego de solicitações ARP em \textit{broadcast} por toda a rede, limitando-as ao ''\textit{fabric manager}'', e apenas ao montar a tabela PMAC (inicialmente ou em caso de falhas)\cite{NiranjanMysore:2009:PSF:1594977.1592575}.
 
 
 \bibliographystyle{unsrt}
