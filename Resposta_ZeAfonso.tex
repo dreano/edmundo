@@ -1,0 +1,60 @@
+\documentclass[12pt,twoside,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{timbre-ic}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\vskip 15mm
+
+\begin{center} 
+\textbf{Seminário  - Segurança em Nuvens - Tópicos em Redes de Computadores I}
+
+\end{center}
+
+\vskip 5mm
+
+\textbf{Aluno:} Adriano Ricardo Ruggero
+
+\textbf{RA:} 144659
+
+\textbf{Professor:} Edmundo R. M. Madeira
+
+\vskip 20mm
+
+\begin{abstract}
+
+Descreva sucintamente que medidas podem
+ser tomadas por um CSP para garantir a
+disponibilidade de uma aplicação SaaS.
+
+
+\end{abstract}
+
+% resetando configs de layout
+\newpage
+\pagestyle{plain}
+\headheight 0.0cm
+\headsep 0.0cm
+\footskip 2.2cm
+
+\section{Resposta Seminário}
+\label{sec:01}
+
+Para aplicações \textit{SaaS}, disponibilidade é essencial. Provedores deste tipo de serviço devem \cancel{tentar} garantir que   seus clientes serão atendidos sempre que solicitarem. Para tal, fazem-se necessárias alterações nos níveis de infra-estrutura e de aplicações para agregar alta disponibilidade e escalabilidade. A adoção de uma arquitetura de multi-camadas também é necessária, apoiada para um grande número de instâncias das aplicações, para um balanceamento de cargas, funcionando em um número considerável de servidores.
+A capacidade de tratar falhas de \textit{hardware} e/ou \textit{software} (resiliência), também como ataques DoS (\textit{Denied of Service}), deve ser considerada.
+Planos para \textit{business continuity} (continuidade do negócio) e \textit{disaster recovery} (recuperação de desastres) devem ser levadas em conta, caso ocorra uma emergência, assegurando a segurança dos dados das empresas (clientes) e tempo mínimo de inatividade\cite{Subashini:2011:RSS:1889383.1889415}.
+
+\bibliographystyle{unsrt}
+\bibliography{refs_zeafonso}
+
+\end{document}
