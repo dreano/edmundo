@@ -1,0 +1,72 @@
+\documentclass[12pt,twoside,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{timbre-ic}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pifont}
+
+
+\begin{document}
+
+\vskip 15mm
+
+\begin{center} 
+\textbf{Seminário  - Topologias de Data Centers - Tópicos em Redes de Computadores I}
+
+\end{center}
+
+\vskip 5mm
+
+\textbf{Aluno:} Adriano Ricardo Ruggero
+
+\textbf{RA:} 144659
+
+\textbf{Professor:} Edmundo R. M. Madeira
+
+\vskip 20mm
+
+\begin{abstract}
+
+O ARP (\textit{Address Resolution Protocol}) é um protocolo usado
+para encontrar um endereço de camada 2 (MAC) a partir de
+um endereço de camada 3 (IP). O emissor difunde em
+\textit{broadcast} um pacote ARP contendo o endereço IP de outro
+\textit{host} e espera uma resposta com o endereço MAC respectivo.
+Ao conectar milhares de servidores usando uma única rede
+de camada 2 devemos evitar o uso de sinalizações em
+\textit{broadcast}. Escolha uma das topologias abaixo e explique
+como a mesma foi projetada para evitar o \textit{broadcast} do
+protocolo ARP:
+\begin{itemize}
+
+\item Monsoon (Ref 5 – seção 3.2)
+
+\item VL2 (Ref 4 – seção 4.2)
+
+\item Portland (Ref 6 – seção 3.3)
+
+\end{itemize}
+
+\end{abstract}
+
+% resetando configs de layout
+\newpage
+\pagestyle{plain}
+\headheight 0.0cm
+\headsep 0.0cm
+\footskip 2.2cm
+
+\section{Resposta Seminário}
+\label{sec:01}
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{refs_neto}
+
+\end{document}
