@@ -1,0 +1,28 @@
+set terminal png
+set output "mo818-handoff-mob-2-traf-0.png"
+set title "Handoff: mobility 2, CBR"
+set xlabel "# WiFi stations"
+set ylabel "Time (s)"
+plot "-"  title "Minimum" with lines, "-"  title "Average" with lines, "-"  title "Maximum" with lines
+8 2.049676
+16 4.915559
+24 1.029054
+32 1.030446
+40 2.951166
+e
+8 9.780839625
+16 8.1487951875
+24 8.9393595833
+32 6.9179355313
+40 27.9641975385
+e
+8 24.679253
+16 12.391344
+24 42.295568
+32 20.896902
+40 93.003457
+e
+
+									
+														
+

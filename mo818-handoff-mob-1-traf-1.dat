@@ -1,0 +1,29 @@
+set terminal png
+set output "mo818-handoff-mob-1-traf-1.png"
+set title "Handoff: mobility 1, burst"
+set xlabel "# WiFi stations"
+set ylabel "Time (s)"
+plot "-"  title "Minimum" with lines, "-"  title "Average" with lines, "-"  title "Maximum" with lines
+8 3.803341
+16 4.117544
+24 2.198906
+32 1.331545
+40 1.613518
+e
+8 8.1781088571
+16 12.0697526154
+24 10.5142985
+32 11.2866078387
+40 16.6979470526
+e
+8 13.009572
+16 24.083439
+24 25.431456
+32 46.634742
+40 49.991448
+e
+
+														
+
+									
+

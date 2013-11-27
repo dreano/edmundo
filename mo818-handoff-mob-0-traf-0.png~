@@ -1,0 +1,24 @@
+set terminal png
+set output "mo818-throughput-mob-2-traf-1.png"
+set title "Throughput: mobility high, burst"
+set xlabel "# WiFi stations"
+set ylabel "Throughput (Kibps)"
+plot "-"  title "Closest" with yerrorlines, "-"  title "Average" with yerrorlines, "-"  title "Fartherst" with yerrorlines
+8 446.171 0.0203439
+16 446.42 0.150926
+24 325.175 27.285
+32 273.526 48.2931
+40 190.208 44.8008
+e
+8 223.101 0.0191617
+16 223.261 0.0427406
+24 167.614 2.76674
+32 129.303 1.60361
+40 102.546 1.0499
+e
+8 446.206 0.122259
+16 446.457 0.871721
+24 339.37 27.0903
+32 276.177 34.6814
+40 181.889 34.0613
+e
