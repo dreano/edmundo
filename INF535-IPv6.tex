@@ -1,0 +1,73 @@
+\documentclass[12pt,twoside,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{timbre-ic}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{float}
+
+
+\begin{document}
+
+\vskip 15mm
+
+\begin{center} 
+\textbf{Exercício IPv6 - Atribuição de prefixos - INF-535}
+
+\end{center}
+
+\vskip 5mm
+
+\textbf{Aluno:} Adriano Ricardo Ruggero
+
+\textbf{RG:} 25.457.297-2
+
+\textbf{Professor:} Sidney Pio de Campos
+
+\vskip 20mm
+
+\begin{abstract}
+A partir do prefixo 2001:0db8::/32, atribuir os prefixos às redes e computadores da organização ilustrada na figura entregue em sala.
+
+
+\end{abstract}
+
+% resetando configs de layout
+\newpage
+\pagestyle{plain}
+\headheight 0.0cm
+\headsep 0.0cm
+\footskip 2.2cm
+
+\section{Exercício}
+\label{sec:01}
+
+\textbf{Resposta:} 
+
+\begin{table}[H]
+\label{tab:printers}
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | c |}
+    \hline
+Descrição & Endereço/Prefixo &  & Descrição & Endereço/Prefixo\\ \hline
+Infraestrutura rot. & 2001:db8::/48 &  & Rede 7 (R7) & 2001:db8:3:100::/56\\\hline
+Gestão e Monit. & 2001:db8:1::/48 &  & Rede do Host1 & 2001:db8:2::/64\\\hline
+Rede 1 (R1) & 2001:db8:2::/48 &  & Rede do Host2 & 2001:db8:3::/64\\\hline
+Rede 2 (R2) & 2001:db8:3::/48 &  & Rede do Host3 & 2001:db8:3:1::/64\\\hline
+Rede 3 (R3) & 2001:db8:4::/48 &  & Host1 & 2001:0db8:0002:0000:0000:0000:0000:0001/64\\\hline
+Rede 4 (R4) & 2001:db8:2::/56 &  & Host2 & 2001:0db8:0003:0000:0000:0000:0000:0002/64\\\hline
+Rede 5 (R5) & 2001:db8:3::/56 &  & Host3 & 2001:0db8:0003:0000:0000:0000:0000:0003/64\\\hline
+Rede 6 (R6) & 2001:db8:2:100::/56 &  &  & \\
+\hline
+    \end{tabular}
+\end{center}    
+\end{small}
+\end{table}
+
+\end{document}
